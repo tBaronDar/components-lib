@@ -31,6 +31,7 @@
 .testimonial-author {
 	font-size: 0.8rem;
 	color: #c3fae8;
+	margin-bottom: 4px;
 }
 .testimonial-job {
 	font-size: 0.7rem;
@@ -86,4 +87,8 @@
 	border-radius: 50%;
 	border: 2px solid #087f5b;
 	background-color: #fff;
+}
+
+.selected-dot {
+	background-color: #087f5b;
 }
