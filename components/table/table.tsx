@@ -2,33 +2,31 @@
 
 import React from "react";
 
-export default function Table() {
+import styles from "@/components/table/table.module.css";
+
+export default function Table({ data }) {
+	const tableHead = Object.keys(data[0]);
 	return (
-		<table>
-			<tr>
-				<td>Player</td>
-				<td>Defence</td>
-				<td>Attack</td>
-				<td>Speed</td>
-				<td>Acceleration</td>
-				<td>Passing</td>
-			</tr>
-			<tr>
-				<td>Minanda</td>
-				<td>Mediocre</td>
-				<td>Excellent</td>
-				<td>Good</td>
-				<td>Good</td>
-				<td>Decent</td>
-			</tr>
-			<tr>
-				<td>Castollo</td>
-				<td>Poor</td>
-				<td>Good</td>
-				<td>Excellent</td>
-				<td>Decent</td>
-				<td>Good</td>
-			</tr>
+		<table className={styles.main}>
+			<thead>
+				<tr>
+					{tableHead.map((item) => (
+						<th>{item}</th>
+					))}
+				</tr>
+			</thead>
+			<tbody>
+				{data.map((item) => (
+					<tr>
+						<th>{item.name}</th>
+						<td>{item.defence}</td>
+						<td>{item.attack}</td>
+						<td>{item.speed}</td>
+						<td>{item.acceleration}</td>
+						<td>{item.passing}</td>
+					</tr>
+				))}
+			</tbody>
 		</table>
 	);
 }

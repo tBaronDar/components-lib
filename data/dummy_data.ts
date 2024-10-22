@@ -1,4 +1,39 @@
 // dummy data for the components
+//table
+export const playersData = [
+	{
+		name: "Minanda",
+		defence: "mediocre",
+		attack: "excellent",
+		speed: "good",
+		acceleration: "good",
+		passing: "decent",
+	},
+	{
+		name: "Castollo",
+		defence: "poor",
+		attack: "good",
+		speed: "excellent",
+		acceleration: "decent",
+		passing: "good",
+	},
+	{
+		name: "Valeny",
+		defence: "excellent",
+		attack: "poor",
+		speed: "decent",
+		acceleration: "good",
+		passing: "good",
+	},
+	{
+		name: "Iouga",
+		defence: "good",
+		attack: "decent",
+		speed: "good",
+		acceleration: "poor",
+		passing: "good",
+	},
+];
 //accordion
 export const FAQ = [
 	{
