@@ -11,13 +11,13 @@ export default function Table({ data }) {
 			<thead>
 				<tr>
 					{tableHead.map((item) => (
-						<th>{item}</th>
+						<th key={item}>{item}</th>
 					))}
 				</tr>
 			</thead>
 			<tbody>
 				{data.map((item) => (
-					<tr>
+					<tr key={item.name}>
 						<th>{item.name}</th>
 						<td>{item.defence}</td>
 						<td>{item.attack}</td>
