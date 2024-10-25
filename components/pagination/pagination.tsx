@@ -14,41 +14,33 @@ export default function Pagination({ pages, initialPage }) {
 	useEffect(() => {
 		const firstButtons = [];
 		const tempSelectedButtons = [];
-		if (pages <= 5) {
-			for (let i = 1; i <= 5; i++) {
-				firstButtons.push(i);
-				//all buttons unselected
-				tempSelectedButtons.push(undefined);
-			}
-			//the current button selected
-			tempSelectedButtons[selectedPage - 1] = "selected-button";
-			setNumberButtons(firstButtons);
-			setSelectedButtons(tempSelectedButtons);
-			setShowFirstButton(false);
-			setShowLastButton(false);
-		} else {
-			for (
-				let i = Math.max(1, selectedPage - 2);
-				i < Math.min(pages + 1, selectedPage + 2);
-				i++
-			) {
-				if (i < pages - 2) {
-					setShowLastButton(true);
-				} else {
-					setShowLastButton(false);
-				}
-				firstButtons.push(i);
-				selectedButtons.push(undefined);
-				tempSelectedButtons.push(undefined);
-			}
-			tempSelectedButtons[selectedPage - 1] = "selected-button";
-			setNumberButtons(firstButtons);
-			setSelectedButtons(tempSelectedButtons);
+
+		//last button is separate
+		firstButtons.push(1);
+		//display buttons===pages, exclude first and last
+		for (let i = 1; i < pages - 1; i++) {
+			firstButtons.push(i + 1);
 		}
+		//last button is separate
+		if (pages > 2) {
+			firstButtons.push(pages);
+		}
+		firstButtons.forEach((item) => {
+			if (selectedPage === item) {
+				tempSelectedButtons.push("selected-button");
+			} else {
+				tempSelectedButtons.push(undefined);
+			}
+		});
+
+		setNumberButtons(firstButtons);
+		setSelectedButtons(tempSelectedButtons);
 	}, [selectedPage]);
 
+	console.log("buttons array: ", numberButtons);
+	console.log("selected: ", selectedButtons);
+
 	function numberButtonClickHandler(buttonIndex: number) {
-		console.log(buttonIndex);
 		setSelectedPage(buttonIndex);
 	}
 
@@ -93,18 +85,15 @@ export default function Pagination({ pages, initialPage }) {
 					className={`${styles["number-button"]} ${
 						styles[`${selectedButtons[numberButtons.indexOf(item)]}`]
 					}`}
-					onClick={numberButtonClickHandler.bind(null, item)}>
+					onClick={numberButtonClickHandler.bind(
+						null,
+						numberButtons.indexOf(item - 1)
+					)}>
 					{item}
 				</button>
 			))}
 			{showLastButton && <p>...</p>}
-			{showLastButton && (
-				<button
-					className={styles["number-button"]}
-					onClick={numberButtonClickHandler.bind(null, pages)}>
-					{pages}
-				</button>
-			)}
+
 			<button className={styles["arrow-button"]} onClick={nextButtonHandler}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
