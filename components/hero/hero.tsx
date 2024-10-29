@@ -1,7 +1,9 @@
 import React from "react";
 
 import styles from "@/components/hero/hero.module.css";
-import { rubik } from "@/app/layout";
+import { Rubik } from "next/font/google";
+
+const rubik = Rubik({ weight: "variable", subsets: ["latin"] });
 
 export default function Hero() {
 	return (

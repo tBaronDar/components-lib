@@ -20,7 +20,7 @@ const interVariable = localFont({
 	weight: "200 800",
 });
 
-export const rubik = Rubik({ weight: "variable", subsets: ["latin"] });
+const rubik = Rubik({ weight: "variable", subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Components Library",
