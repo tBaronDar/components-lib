@@ -41,7 +41,7 @@ export default function Pagination({ pages, initialPage }) {
 	console.log("selected: ", selectedButtons);
 
 	function numberButtonClickHandler(buttonIndex: number) {
-		setSelectedPage(buttonIndex);
+		setSelectedPage(buttonIndex + 1);
 	}
 
 	function nextButtonHandler() {
@@ -61,7 +61,7 @@ export default function Pagination({ pages, initialPage }) {
 	}
 
 	return (
-		<div className={styles.pagination}>
+		<article className={styles.pagination}>
 			<button
 				className={styles["arrow-button"]}
 				onClick={previousButtonHandler}>
@@ -87,7 +87,7 @@ export default function Pagination({ pages, initialPage }) {
 					}`}
 					onClick={numberButtonClickHandler.bind(
 						null,
-						numberButtons.indexOf(item - 1)
+						numberButtons.indexOf(item)
 					)}>
 					{item}
 				</button>
@@ -109,6 +109,6 @@ export default function Pagination({ pages, initialPage }) {
 					/>
 				</svg>
 			</button>
-		</div>
+		</article>
 	);
 }

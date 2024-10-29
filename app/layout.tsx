@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Rubik } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -19,6 +20,8 @@ const interVariable = localFont({
 	weight: "200 800",
 });
 
+export const rubik = Rubik({ weight: "variable", subsets: ["latin"] });
+
 export const metadata: Metadata = {
 	title: "Components Library",
 	description: "A library of pre-fabed web components",
@@ -32,7 +35,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} ${interVariable.variable}`}>
+				className={`${geistSans.variable} ${geistMono.variable} ${interVariable.variable} ${rubik.className}`}>
 				{children}
 			</body>
 		</html>
