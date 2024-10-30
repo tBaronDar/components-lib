@@ -1,0 +1,12 @@
+.main-page {
+	padding-bottom: 5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 3rem;
+}
+
+.main-page header {
+	width: 100%;
+}

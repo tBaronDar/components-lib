@@ -15,8 +15,9 @@ export default function Pagination({ pages, initialPage }) {
 		const firstButtons = [];
 		const tempSelectedButtons = [];
 
-		//last button is separate
+		//first button is separate
 		firstButtons.push(1);
+
 		//display buttons===pages, exclude first and last
 		for (let i = 1; i < pages - 1; i++) {
 			firstButtons.push(i + 1);
@@ -37,8 +38,8 @@ export default function Pagination({ pages, initialPage }) {
 		setSelectedButtons(tempSelectedButtons);
 	}, [selectedPage]);
 
-	console.log("buttons array: ", numberButtons);
-	console.log("selected: ", selectedButtons);
+	// console.log("buttons array: ", numberButtons);
+	// console.log("selected: ", selectedButtons);
 
 	function numberButtonClickHandler(buttonIndex: number) {
 		setSelectedPage(buttonIndex + 1);

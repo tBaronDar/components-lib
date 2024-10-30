@@ -2,16 +2,45 @@
 	font-family: var(--font-rubik);
 }
 
+.hero header {
+	height: 100vh;
+	position: relative;
+	/* background-color: rebeccapurple; */
+	background-image: linear-gradient(
+			rgba(12, 12, 12, 0.6),
+			rgba(12, 12, 12, 0.6)
+		),
+		url(https://themis-generic-images.s3.eu-north-1.amazonaws.com/smiling-couple-eating-popcorn-watching-tv-while-relaxing-sofa.jpg);
+	background-size: cover;
+	color: #fff;
+}
+
 .navigation {
 	display: flex;
 	justify-content: space-between;
 	font-size: 1.5rem;
 	font-weight: 700;
+	padding-top: 1.5rem;
+}
+
+.header-container {
+	width: 75rem;
+	/* relative to parent */
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	/* relative to self */
+	transform: translate(-50%, -50%);
+}
+
+.header-container-inner {
+	width: 50%;
 }
 
 .hero h1 {
 	font-size: 3.5rem;
 	margin-bottom: 2rem;
+	line-height: 1.05;
 }
 
 .hero p {
@@ -28,6 +57,7 @@
 	border: none;
 	background-color: #e67e22;
 	color: #fff;
+	cursor: pointer;
 }
 
 .hero h2 {
@@ -37,4 +67,9 @@
 
 .hero section {
 	padding: 6rem 0;
+}
+
+.container {
+	width: 75rem;
+	margin: 0 auto;
 }
