@@ -2,7 +2,6 @@
 import React from "react";
 
 import styles from "./mobile-check.module.css";
-import { redirect } from "next/navigation";
 
 export default function MobileCheck({ showComponents }) {
 	return (

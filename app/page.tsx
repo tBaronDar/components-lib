@@ -16,12 +16,10 @@ import MobileCheck from "@/components/mobile/mobile-check";
 export default function ComponentsLib() {
 	const [isSmallScreen, setIsSmallScreen] = useState(false);
 	const [proccedByUser, setProccedByUser] = useState(false);
+
 	useEffect(() => {
-		if (window.innerWidth < 768) {
-			setIsSmallScreen(true);
-		} else {
-			setIsSmallScreen(false);
-		}
+		console.log(window.innerWidth);
+		setIsSmallScreen(window.innerWidth / window.devicePixelRatio < 768);
 	}, [proccedByUser]);
 
 	return (
@@ -35,7 +33,7 @@ export default function ComponentsLib() {
 					<Carousel data={carouselData} />
 				</main>
 			)}
-			{isSmallScreen && (
+			{isSmallScreen && !proccedByUser && (
 				<MobileCheck
 					showComponents={() => {
 						setProccedByUser(true);
