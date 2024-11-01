@@ -18,7 +18,6 @@ export default function ComponentsLib() {
 	const [proccedByUser, setProccedByUser] = useState(false);
 
 	useEffect(() => {
-		console.log(window.innerWidth);
 		setIsSmallScreen(window.innerWidth / window.devicePixelRatio < 768);
 	}, [proccedByUser]);
 

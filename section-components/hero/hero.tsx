@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "@/components/hero/hero.module.css";
+import styles from "@/section-components/hero/hero.module.css";
 import { Rubik } from "next/font/google";
 
 const rubik = Rubik({ weight: "variable", subsets: ["latin"] });

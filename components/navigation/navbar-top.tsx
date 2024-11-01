@@ -18,6 +18,14 @@ export default function Navbar() {
 							Hero Component
 						</Link>
 					</li>
+					<li>
+						<Link
+							href="/email-app-layout"
+							target="_blank"
+							className={styles.link}>
+							Email App Layout
+						</Link>
+					</li>
 				</ul>
 			</details>
 		</nav>
